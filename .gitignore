@@ -1,0 +1,17 @@
+*__pycache__*
+.ipynb_checkpoints
+*.zip
+*.html
+*.mp4
+*egg-info*
+data/*
+.fuse*
+
+# VS code and pycharm
+.vscode/
+.idea/
+
+# project environent variables
+.env*
+.csv*
+.xlsx
