@@ -6,12 +6,14 @@ xls = pd.ExcelFile('data/Ola_6_2020.xlsx')
 sheet_names = xls.sheet_names
 
 xls_dict = {
+    
+    
     2020:{
         'questions_list': [], 
         'answers': {
             'skiprows' : 8, 
             'usecols':'B:B',
-            'cutword': 'Columns Tested'
+            'cutwords': ['Columns Tested', 'Media']
         },
         
         'question': {
@@ -43,7 +45,7 @@ xls_dict = {
             'columns': ['AB', 	'C+', 'C', 'C-', 'D+/D/E']
         }, 
 
-        'Zona':{
+        'Ciudad':{
             'skiprows' : 8, 
             'usecols':'R:AS',
             'columns': ['Aguascalientes', 'Cancun', 'CDMX', 'Celaya', 'Ciudad Juarez', 'Ciudad Victoria', 'Culiacan', 'GDL', 'Hermosillo', 'Leon', 'Mazatlan', 'Merida', 'Morelia', 'MTY', 'Oaxaca', 'Pachuca', 'Puebla', 'Queretaro', 'San Luis Potosí', 'Tampico', 'Tepatitlán', 'Tijuana', 'Tlaxcala', 'Toluca', 'Torreon (Laguna)', 'Villa Hermosa', 'Zacatecas', 'Resto']
@@ -154,45 +156,48 @@ xls_dict = {
 sheet_dict = xls_dict[2020]
 df_year = pd.DataFrame()
 for sheet  in tqdm(sheet_names):
-    sheet = sheet_names[12] 
+    if sheet not in ['Contents', 'MUESTRA', 'Q1B', 'Q2BEDAD']:
+        df_answ = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['answers']['skiprows'], usecols = sheet_dict['answers']['usecols'])
+        question = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['question']['skiprows'], usecols = sheet_dict['question']['usecols']).columns[0]
 
-    df_answ = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['answers']['skiprows'], usecols = sheet_dict['answers']['usecols'])
-    question = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['question']['skiprows'], usecols = sheet_dict['question']['usecols']).columns[0]
+        #Rename the column
+        df_answ.columns = [question]
+        #We just want to include the answer to the question not the statistical values
+        for cutword  in sheet_dict['answers']['cutwords']:
+            df_cut = df_answ[ df_answ[question].replace(np.nan, '').str.startswith(cutword) ]
+            if len(df_cut)>0:
+                cutindex = df_cut.index[0]
+                break
+        #We cut the df at the cutword index position
+        df_answ = df_answ[:cutindex]
+        #We only want the values asociated with the anwers not the statistical values
+        df_answ = df_answ.dropna()
+        valuesindex = df_answ.index
 
-    #Rename the column
-    df_answ.columns = [question]
-    #We just want to include the answer to the question not the statistical values
-    cutindex = df_answ[ df_answ[question].replace(np.nan, '').str.startswith(sheet_dict['answers']['cutword']) ].index[0]
-    #We cut the df at the cutword index position
-    df_answ = df_answ[:cutindex]
-    #We only want the values asociated with the anwers not the statistical values
-    df_answ = df_answ.dropna()
-    valuesindex = df_answ.index
-
-    df_question = pd.DataFrame()
-    for demograpphic in tqdm(sheet_dict.keys()):
-        if demograpphic in ['question', 'answers', 'questions_list']:
-            continue
-        else:
-            df = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict[demograpphic]['skiprows'], usecols = sheet_dict[demograpphic]['usecols'])
-            df = df.loc[valuesindex]
-            df.columns = sheet_dict[demograpphic]['columns']
-            df = df_answ.join(df)
-            df[question] = df[question].apply(lambda x: question  + ' - ' + x)
-            df['pregunta'] =  question
-            df = df.set_index(question)
-            df = df.transpose()
-            df = df.reset_index()
-            df = df.rename(columns ={'index':'demographic_values'})
-            df['demographic'] = demograpphic
-            
-            if len(df_question) == 0:
-                df_question = df
+        df_question = pd.DataFrame()
+        for demograpphic in tqdm(sheet_dict.keys()):
+            if demograpphic in ['question', 'answers', 'questions_list']:
+                continue
             else:
-                df_question = df_question.append(df)
+                df = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict[demograpphic]['skiprows'], usecols = sheet_dict[demograpphic]['usecols'])
+                df = df.loc[valuesindex]
+                df.columns = sheet_dict[demograpphic]['columns']
+                df = df_answ.join(df)
+                df[question] = df[question].apply(lambda x: question  + ' - ' + x)
+                df['pregunta'] =  question
+                df = df.set_index(question)
+                df = df.transpose()
+                df = df.reset_index()
+                df = df.rename(columns ={'index':'demographic_values'})
+                df['demographic'] = demograpphic
+                
+                if len(df_question) == 0:
+                    df_question = df
+                else:
+                    df_question = df_question.append(df)
+                
+        if len(df_year) == 0:
+            df_year = df_question
+        else:
+            df_year = df_year.merge(df_question, on=['demographic', 'demographic_values'])
             
-    if len(df_year) == 0:
-        df_year = df_question
-    else:
-        df_year = df_year.append(df_question)
-        
