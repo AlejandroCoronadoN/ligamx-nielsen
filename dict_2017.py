@@ -1,7 +1,5 @@
-test_dict = {
-    
-2017:{
-        'questions_list': [], 
+dict_2017 = {
+        
         'answers': {
             'skiprows' : 8, 
             'usecols':'A:A',
@@ -22,7 +20,7 @@ test_dict = {
         'generacion':{
            'skiprows' : 8, 
             'usecols':'F:G',
-            'columns': ['MILENIALS', 	'NO MILENIALS']
+            'columns': ['Milenials', 	'No Milenials']
         },
         
         'edad':{
@@ -46,49 +44,49 @@ test_dict = {
         'Equipo Favorito':{
             'skiprows' : 8, 
             'usecols':'AV:CD',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero', 'U de G', 'Venados F.C', 'Zacatepec', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
      },
         
         'Segundo Equipo':{
             'skiprows' : 8, 
             'usecols':'CF:DN',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero', 'U de G', 'Venados F.C', 'Zacatepec', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
             },
         
         'Equipo Segunda':{
             'skiprows' : 8,     
             'usecols':'DP:EX',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero', 'U de G', 'Venados F.C', 'Zacatepec', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
             },
         
         'Total Afición':{
             'skiprows' : 8, 
             'usecols':'EZ:GH',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero', 'U de G', 'Venados F.C', 'Zacatepec', 'Ninguno'] 
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno'] 
             },      
 
         'Nivel Afición':{
             'skiprows' : 8, 
             'usecols':'GJ:GL',
-            'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
+            'columns': ['Heavy', 'Medium', 'Light']
         },      
 
         #'Nivel Afición - Nuevos':{
         #   'skiprows' : 8, 
         #    'usecols':'FN:FP',
-        #    'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
+        #    'columns': ['Heavy', 'Medium', 'Light']
         #},      
 
         'Fan Base':{
             'skiprow    s' : 8, 
             'usecols':'GN:GP',
-            'columns': ['FAN BASE 1', 'FAN BASE 2', 'FAN BASE 3'] 
+            'columns':  ['Fan base 1', 'Fan base 2', 'Fan base 3']
         },      
         
         'Liga':{
             'skiprows' : 8, 
             'usecols':'GR:  GT',
-            'columns': ['LIGA MX', 'ASCENSO MX', 'LIGA MX + ASCENSO MX']
+            'columns': ['Liga MX', 'Ascenso MX', 'Liga MX and Ascenso MX']
         },      
 
         'Relación con el futbol':{
@@ -118,7 +116,7 @@ test_dict = {
         'Practica Futbol':{
             'skiprows' : 8, 
             'usecols':'GY:GZ',
-            'columns': ['NO PRACTICA', 'Sí PRACTICA']
+            'columns': ['No practica', 'Si practica']
         },      
     
         #'Tipo de Levantamiento':{
@@ -136,7 +134,7 @@ test_dict = {
         #'Presencia de niños':{
         #    'skiprows' : 8, 
         #    'usecols':'GA:GB',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},      
 
         'Fans en la ciudad':{
@@ -148,19 +146,19 @@ test_dict = {
         'Milenials Aficionados':{
             'skiprows' : 8, 
             'usecols':'HR:IX',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero', 'U de G', 'Venados F.C', 'Zacatepec', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Murciélagos FC', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
         },      
 
         #'Productos Bancarios':{
         #    'skiprows' : 8, 
         #    'usecols':'GN:GP',
-        #    'columns': ['TARJETA DE DÉBITO', 'TARJETA DE CRÉDITO', 'BANCO EN LINEA']
+        #    'columns': ['Tarjeta de débito', 'Tarjeta de crédito','Banco en línea']
         #},      
         
         #'BBVA Bancomer':{
         #    'skiprows' : 8, 
         #    'usecols':'GQ:GR',
-        #    'columns': ['CLIENTES BBVA BANCOMER', 'OTROS BANCOS']
+        #    'columns': ['Clientes BBVA Bancomer','Otros Bancos']
         #},      
 
         'Segmentación':{
@@ -172,7 +170,7 @@ test_dict = {
         #'Apuestas Deportivas':{
         #    'skiprows' : 8, 
         #    'usecols':'HN:HO',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},     
         
         #'Caliente':{
@@ -180,7 +178,4 @@ test_dict = {
         #    'usecols':'HP:HQ',
         #    'columns': ['CONOCE', 'USA']
         #},      
-}
-
-
 }

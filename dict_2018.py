@@ -1,7 +1,5 @@
-test_dict = {
-    
-2018:{
-        'questions_list': [], 
+dict_2018 ={
+        
         'answers': {
             'skiprows' : 9, 
             'usecols':'B:B',
@@ -40,61 +38,61 @@ test_dict = {
         'Ciudades':{
             'skiprows' : 9, 
             'usecols':'Z:AY',
-            'columns':['AGUASCALIENTES', 'CANCÚN', 'CDMX', 'CELAYA', 'CIUDAD JUÃREZ', 'CIUDAD VICTORIA', 'CULIACAN', 'GUADALAJARA', 'HERMOSILLO', 'LEÓN', 'MÉRIDA', 'MONTERREY', 'MORELIA', 'OAXACA', 'PACHUCA', 'PUEBLA', 'QUERÉTARO', 'SAN LUIS', 'TAMPICO', 'TAPACHULA', 'TIJUANA', 'TOLUCA', 'TORREÓN', 'VERACRUZ', 'ZACATECAS', 'ZACATEPEC']
+            'columns':['Aguascalientes', 'Cancún', 'CDMX', 'Celaya', 'Ciudad Juárez', 'Ciudad Victoria', 'Culiacán', 'Guadalajara', 'Hermosillo', 'León', 'Mérida', 'Monterrey', 'Morelia', 'Oaxaca', 'Pachuca', 'Puebla', 'Querétaro', 'San Luis Potosí', 'Tampico', 'Tapachula', 'Tijuana', 'Toluca', 'Torreón', 'Veracruz', 'Zacatecas', 'Zacatepec']
         },
 
         'Equipo Favorito':{
             'skiprows' : 9, 
             'usecols':'AZ:CF',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz (Tiburones)', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros (Tapachula)', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juarez', 'Atlético San Luis', 'Mineros de Zacatecas', 'POTROS UAEM', 'Tampico M Fútbol Club', 'U DE G', 'Venados F.C', 'ZACATEPEC']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec']
         },
         
         'Segundo Equipo':{
             'skiprows' : 9, 
             'usecols':'CG:DN',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'Le ón', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz (Tiburones)', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros (Tapachula)', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC JUÃREZ', 'Atlético San Luis', 'Mineros de Zacatecas', 'POTROS UAEM', 'Tampico M Fútbol Club', 'U DE G', 'Venados F.C', 'ZACATEPEC', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
         },
         
         'Equipo Segunda':{
             'skiprows' : 9,     
             'usecols':'DO:EV',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'Le ón', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz (Tiburones)', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante', 'Cafetaleros (Tapachula)', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC JUÃREZ', 'Atlético San Luis', 'Mineros de Zacatecas', 'POTROS UAEM', 'Tampico M Fútbol Club', 'U DE G', 'Venados F.C', 'ZACATEPEC', 'Ninguno']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec', 'Ninguno']
         },
         
         'Total Afición':{
             'skiprows' : 9, 
             'usecols':'EW:GC',
-            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul ', 'Pumas ', 'Tigres', 'Rayados ', 'Santos ', 'Toluca', 'Le ón', 'Tijuana', 'Monarcas ', 'Puebla', 'Pachuca ', 'Querétaro ', 'Lobos BUAP', 'Veracruz ', 'Necaxa', 'Alebrijes de Oaxaca', 'Atlante ', 'Cafetaleros ', 'Cimarrones de Sonora FC  ', 'Club Celaya ', 'Correcaminos ', 'Dorados', 'FC JUÃREZ', 'Atlético San Luis (AA)', 'Mineros de Zacatecas(AB)', 'POTROS UAEM (AC)', 'Tampico M Fútbol Club(AD)', 'U DE G(AE)', 'Venados F.C(AF)', 'ZACATEPEC(AG)']
+            'columns': ['América', 'Atlas', 'Chivas', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados', 'Santos', 'Toluca', 'León', 'Tijuana', 'Monarcas', 'Puebla', 'Pachuca', 'Querétaro', 'Lobos BUAP', 'Veracruz', 'Necaxa', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Cimarrones de Sonora FC', 'Club Celaya', 'Correcaminos', 'Dorados', 'FC Juárez', 'Atlético San Luis', 'Mineros de Zacatecas', 'Potros UAEM', 'Tampico Madero FC', 'U de G', 'Venados FC', 'Zacatepec']
         },      
 
         'Nivel Afición':{
             'skiprows' : 9, 
             'usecols':'GS:GU',
-            'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
+            'columns': ['Heavy', 'Medium', 'Light']
         },      
 
         #'Nivel Afición - Nuevos':{
         #   'skiprows' : 9, 
         #    'usecols':'FN:FP',
-        #    'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
+        #    'columns': ['Heavy', 'Medium', 'Light']
         #},      
 
         'Fan Base':{
             'skiprow    s' : 8, 
             'usecols':'GD:GF',
-            'columns': ['FAN BASE 1', 'FAN BASE 2', 'FAN BASE 3'] 
+            'columns':  ['Fan base 1', 'Fan base 2', 'Fan base 3']
         },      
         
         #'Liga':{
         #    'skiprows' : 9, 
         #    'usecols':'FT:FV',
-        #    'columns': ['LIGA MX', 'ASCENSO MX', 'LIGA MX + ASCENSO MX']
+        #    'columns': ['Liga MX', 'Ascenso MX', 'Liga MX and Ascenso MX']
         #},      
         
         'Practica Futbol':{
             'skiprows' : 9, 
             'usecols':'GM:GN',
-            'columns': ['SÍ PRACTICA', 'NO PRACTICA']
+            'columns': ['Si practica', 'No practica']
         },      
     
         'Tipo de Levantamiento':{
@@ -112,7 +110,7 @@ test_dict = {
         #'Presencia de niños':{
         #    'skiprows' : 9, 
         #    'usecols':'GA:GB',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},      
 
         #'Fans en la ciudad':{
@@ -130,25 +128,25 @@ test_dict = {
         'Productos Bancarios':{
             'skiprows' : 9, 
             'usecols':'GN:GP',
-            'columns': ['TARJETA DE DÉBITO', 'TARJETA DE CRÉDITO', 'BANCO EN LINEA']
+            'columns': ['Tarjeta de débito', 'Tarjeta de crédito','Banco en línea']
         },      
         
         'BBVA Bancomer':{
             'skiprows' : 9, 
             'usecols':'GQ:GR',
-            'columns': ['CLIENTES BBVA BANCOMER', 'OTROS BANCOS']
+            'columns': ['Clientes BBVA Bancomer','Otros Bancos']
         },      
 
         #'Segmentación':{
         #    'skiprows' : 9, 
-        #    'usecols':'GK:GN    ',
+        #    'usecols':'GK:GN   ',
         #    'columns': ['Futbolero apasionado', 'Futbolero analítico', 'Futbolero social', 'Futbolero apático']
         #},     
         
         #'Apuestas Deportivas':{
         #    'skiprows' : 9, 
         #    'usecols':'HN:HO',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},     
         
         #'Caliente':{
@@ -156,7 +154,4 @@ test_dict = {
         #    'usecols':'HP:HQ',
         #    'columns': ['CONOCE', 'USA']
         #},      
-}
-
-
 }

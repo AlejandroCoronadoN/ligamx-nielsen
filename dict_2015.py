@@ -1,7 +1,5 @@
-test_dict = {
-    
-2015:{
-        'questions_list': [], 
+dict_2015 = {
+        
         'answers': {
            'skiprows' : 7, 
             'usecols':'A:A',
@@ -46,55 +44,55 @@ test_dict = {
         'Equipo Favorito':{
            'skiprows' : 7, 
             'usecols':'AQ:BX',
-            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Guadalajara (Chivas)', 'Jaguares (Chiapas)', 'León', 'Monterrey (Rayados)', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'UANL (Tigres)', 'UNAM (Pumas)', 'Veracruz (Tiburones)', 'Alebrijes (Oaxaca)', 'Atlante', 'Cafetaleros (Tapachula)', 'Celaya', 'Cimarrones (Sonora)', 'Coras FC (Tepic)', 'Correcaminos', 'FC Juarez', 'Lobos BUAP', 'Mineros (Zacatecas)', 'Murcielagos (Mochis)', 'Necaxa', 'San Luis', 'UDG (Leones Negros)', 'Venados (Mérida)', 'Zacatepec']
+            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Chivas', 'Jaguares', 'León', 'Rayados', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'Tigres', 'Pumas', 'Veracruz', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Celaya', 'Cimarrones', 'Coras FC', 'Correcaminos', 'FC Juárez', 'Lobos BUAP', 'Mineros de Zacatecas', 'Murcielagos', 'Necaxa', 'San Luis Potosí', 'UDG', 'Venados FC', 'Zacatepec']
             },
         
         'Segundo Equipo':{
            'skiprows' : 7, 
             'usecols':'BY:DF',
-            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Guadalajara (Chivas)', 'Jaguares (Chiapas)', 'León', 'Monterrey (Rayados)', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'UANL (Tigres)', 'UNAM (Pumas)', 'Veracruz (Tiburones)', 'Alebrijes (Oaxaca)', 'Atlante', 'Cafetaleros (Tapachula)', 'Celaya', 'Cimarrones (Sonora)', 'Coras FC (Tepic)', 'Correcaminos', 'FC Juarez', 'Lobos BUAP', 'Mineros (Zacatecas)', 'Murcielagos (Mochis)', 'Necaxa', 'San Luis', 'UDG (Leones Negros)', 'Venados (Mérida)', 'Zacatepec']
+            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Chivas', 'Jaguares', 'León', 'Rayados', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'Tigres', 'Pumas', 'Veracruz', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Celaya', 'Cimarrones', 'Coras FC', 'Correcaminos', 'FC Juárez', 'Lobos BUAP', 'Mineros de Zacatecas', 'Murcielagos', 'Necaxa', 'San Luis Potosí', 'UDG', 'Venados FC', 'Zacatepec']
             },
         
         'Equipo Segunda':{
            'skiprows' : 7,     
             'usecols':'DG:EN',
-            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Guadalajara (Chivas)', 'Jaguares (Chiapas)', 'León', 'Monterrey (Rayados)', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'UANL (Tigres)', 'UNAM (Pumas)', 'Veracruz (Tiburones)', 'Alebrijes (Oaxaca)', 'Atlante', 'Cafetaleros (Tapachula)', 'Celaya', 'Cimarrones (Sonora)', 'Coras FC (Tepic)', 'Correcaminos', 'FC Juarez', 'Lobos BUAP', 'Mineros (Zacatecas)', 'Murcielagos (Mochis)', 'Necaxa', 'San Luis', 'UDG (Leones Negros)', 'Venados (Mérida)', 'Zacatepec']
+            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Chivas', 'Jaguares', 'León', 'Rayados', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'Tigres', 'Pumas', 'Veracruz', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Celaya', 'Cimarrones', 'Coras FC', 'Correcaminos', 'FC Juárez', 'Lobos BUAP', 'Mineros de Zacatecas', 'Murcielagos', 'Necaxa', 'San Luis Potosí', 'UDG', 'Venados FC', 'Zacatepec']
             },
         
         'Total Afición':{
            'skiprows' : 7, 
             'usecols':'EO:FV',
-            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Guadalajara (Chivas)', 'Jaguares (Chiapas)', 'León', 'Monterrey (Rayados)', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'UANL (Tigres)', 'UNAM (Pumas)', 'Veracruz (Tiburones)', 'Alebrijes (Oaxaca)', 'Atlante', 'Cafetaleros (Tapachula)', 'Celaya', 'Cimarrones (Sonora)', 'Coras FC (Tepic)', 'Correcaminos', 'FC Juarez', 'Lobos BUAP', 'Mineros (Zacatecas)', 'Murcielagos (Mochis)', 'Necaxa', 'San Luis', 'UDG (Leones Negros)', 'Venados (Mérida)', 'Zacatepec']
+            'columns': ['América', 'Atlas', 'Cruz Azul', 'Dorados', 'Chivas', 'Jaguares', 'León', 'Rayados', 'Morelia', 'Pachuca', 'Puebla', 'Querétaro', 'Santos', 'Tijuana', 'Toluca', 'Tigres', 'Pumas', 'Veracruz', 'Alebrijes', 'Atlante', 'Cafetaleros', 'Celaya', 'Cimarrones', 'Coras FC', 'Correcaminos', 'FC Juárez', 'Lobos BUAP', 'Mineros de Zacatecas', 'Murcielagos', 'Necaxa', 'San Luis Potosí', 'UDG', 'Venados FC', 'Zacatepec']
             },      
 
         'Nivel Afición':{
            'skiprows' : 7, 
             'usecols':'GA:GD',
-            'columns': ['HARDCORE','HEAVY', 'MEDIUM', 'LIGHT']
+            'columns': ['Hardcore','Heavy', 'Medium', 'Light']
         },      
 
         #'Nivel Afición - Nuevos':{
         #  'skiprows' : 7, 
         #    'usecols':'FN:FP',
-        #    'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
+        #    'columns': ['Heavy', 'Medium', 'Light']
         #},      
 
         'Fan Base':{
             'skiprows' : 7, 
             'usecols':'GE:GG',
-            'columns': ['FAN BASE 1', 'FAN BASE 2', 'FAN BASE 3'] 
+            'columns':  ['Fan base 1', 'Fan base 2', 'Fan base 3']
         },      
         
         'Liga':{
            'skiprows' : 7, 
             'usecols':'GH:GI',
-            'columns': ['LIGA MX', 'ASCENSO MX']
+            'columns': ['Liga MX', 'Ascenso MX']
         },      
         
         #'Practica Futbol':{
         #   'skiprows' : 7, 
         #    'usecols':'GM:GN',
-        #    'columns': ['SÍ PRACTICA', 'NO PRACTICA']
+        #    'columns': ['Si practica', 'No practica']
         #},      
     
         #'Tipo de Levantamiento':{
@@ -112,7 +110,7 @@ test_dict = {
         #'Presencia de niños':{
         #   'skiprows' : 7, 
         #    'usecols':'GA:GB',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},      
 
         #'Fans en la ciudad':{
@@ -130,13 +128,13 @@ test_dict = {
         #'Productos Bancarios':{
         #   'skiprows' : 7, 
         #    'usecols':'GN:GP',
-        #    'columns': ['TARJETA DE DÉBITO', 'TARJETA DE CRÉDITO', 'BANCO EN LINEA']
+        #    'columns': ['Tarjeta de débito', 'Tarjeta de crédito','Banco en línea']
         #},      
         
         #'BBVA Bancomer':{
         #   'skiprows' : 7, 
         #    'usecols':'GQ:GR',
-        #    'columns': ['CLIENTES BBVA BANCOMER', 'OTROS BANCOS']
+        #    'columns': ['Clientes BBVA Bancomer','Otros Bancos']
         #},      
 
         #'Segmentación':{
@@ -148,7 +146,7 @@ test_dict = {
         #'Apuestas Deportivas':{
         #   'skiprows' : 7, 
         #    'usecols':'HN:HO',
-        #    'columns': ['SÍ', 'NO']
+        #    'columns': [True, False]
         #},     
         
         #'Caliente':{
@@ -159,4 +157,3 @@ test_dict = {
 }
 
 
-}

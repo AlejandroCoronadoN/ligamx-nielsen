@@ -1,170 +1,47 @@
 import pandas as pd 
 import numpy as np 
 from tqdm import  tqdm
+from dict_2015 import dict_2015
+from dict_2016 import dict_2016
+from dict_2017 import dict_2017
+from dict_2018 import dict_2018
+from dict_2019 import dict_2019
+from dict_2020 import dict_2020
 
+unique_demographic_groups = ['Hombre', 'Mujer', 'Milenials', 'No milenials', '18-25', '26-35',
+       '36-45', '46-55', '56+', 'AB', 'C+', 'C', 'C-', 'D+/D/E',
+       'Aguascalientes', 'Cancún', 'CDMX', 'Celaya', 'Ciudad Juárez',
+       'Ciudad Victoria', 'Culiacán', 'Guadalajara', 'Hermosillo', 'León',
+       'Mazatlán', 'Mérida', 'Morelia', 'Monterrey', 'Oaxaca', 'Pachuca',
+       'Puebla', 'Querétaro', 'San Luis Potosí', 'Tampico', 'Tepatitlán',
+       'Tijuana', 'Tlaxcala', 'Toluca', 'Torreón', 'Villa Hermosa',
+       'Zacatecas', 'Resto', 'América', 'Atlas', 'Chivas', 'Cruz Azul',
+       'Pumas', 'Tigres', 'Rayados', 'Santos', 'Mazatlán FC', 'Necaxa',
+       'FC Juárez', 'Atlético San Luis', 'Alebrijes', 'Atlante',
+       'Cancún FC', 'Cimarrones de Sonora FC', 'Club Celaya',
+       'Correcaminos', 'Dorados', 'Mineros de Zacatecas', 'Pumas Tabasco',
+       'Tapatío', 'Tepatitlán FC', 'Tlaxcala FC', 'Tampico Madero FC',
+       'U de G', 'Venados FC', 'Ninguno', 'Heavy', 'Medium', 'Light',
+       'Fan base 1', 'Fan base 2', 'Fan base 3', 'Liga MX', 'Ascenso MX',
+       'Liga MX and Ascenso MX', 'No practica', 'Si practica',
+       'A veces practiva', 'Practica frecuente', True, False,
+       'Tarjeta de débito', 'Tarjeta de crédito', 'Banco en línea',
+       'Clientes BBVA Bancomer', 'Otros Bancos', 'CONOCE', 'USA']
+       
 xls = pd.ExcelFile('data/Ola_6_2020.xlsx')
 sheet_names = xls.sheet_names
-
-xls_dict = {
-    
-    
-    2020:{
-        'questions_list': [], 
-        'answers': {
-            'skiprows' : 8, 
-            'usecols':'B:B',
-            'cutwords': ['Columns Tested', 'Media']
-        },
-        
-        'question': {
-            'skiprows' : 2, 
-            'usecols':'B:B'
-        },
-        
-        'sexo':{
-            'skiprows' : 8, 
-            'usecols':'D:E',
-            'columns': ['Hombre',	'Mujer']
-        },
-        
-        'generacion':{
-            'skiprows' : 8, 
-            'usecols':'F:G',
-            'columns': ['Milenials', 	'No milenials']
-        },
-        
-        'edad':{
-            'skiprows' : 8, 
-            'usecols':'H:L',
-            'columns': ['18-25',	'26-35',  '36-45', 	'46-55', 	'56+']
-        },
-        
-        'NSE':{
-            'skiprows' : 8, 
-            'usecols':'M:Q',
-            'columns': ['AB', 	'C+', 'C', 'C-', 'D+/D/E']
-        }, 
-
-        'Ciudad':{
-            'skiprows' : 8, 
-            'usecols':'R:AS',
-            'columns': ['Aguascalientes', 'Cancun', 'CDMX', 'Celaya', 'Ciudad Juarez', 'Ciudad Victoria', 'Culiacan', 'GDL', 'Hermosillo', 'Leon', 'Mazatlan', 'Merida', 'Morelia', 'MTY', 'Oaxaca', 'Pachuca', 'Puebla', 'Queretaro', 'San Luis Potosí', 'Tampico', 'Tepatitlán', 'Tijuana', 'Tlaxcala', 'Toluca', 'Torreon (Laguna)', 'Villa Hermosa', 'Zacatecas', 'Resto']
-        },
-
-        'Equipo Favorito':{
-            'skiprows' : 8, 
-            'usecols':'AT:CB',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'León', 'Tijuana', 'Mazatlán FC', 'Puebla', 'Pachuca', 'Querétaro', 'Necaxa', 'FC Juárez', 'Atlético San Luis', 'Alebrijes de Oaxaca', 'Atlante', 'Cancún FC', 'Cimarrones de Sonora FC', 'Club Atlético Morelia', 'Club Celaya', 'Correcaminos', 'Dorados', 'Mineros de Zacatecas', 'Pumas Tabasco', 'Tapatío', 'Tepatitlán FC', 'Tlaxcala FC', 'Tampico M Fútbol Club', 'U DE G', 'Venados FC', 'Ninguno']
-        },
-        
-        'Segundo Equipo':{
-            'skiprows' : 8, 
-            'usecols':'CC:DK',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'León', 'Tijuana', 'Mazatlán FC', 'Puebla', 'Pachuca', 'Querétaro', 'Necaxa', 'FC Juárez', 'Atlético San Luis', 'Alebrijes de Oaxaca', 'Atlante', 'Cancún FC', 'Cimarrones de Sonora FC', 'Club Atlético Morelia', 'Club Celaya', 'Correcaminos', 'Dorados', 'Mineros de Zacatecas', 'Pumas Tabasco', 'Tapatío', 'Tepatitlán FC', 'Tlaxcala FC', 'Tampico M Fútbol Club', 'U DE G', 'Venados FC', 'Ninguno']
-        },
-        
-        'Equipo Segunda':{
-            'skiprows' : 8, 
-            'usecols':'DL:EB',
-            'columns': ['Alebrijes de Oaxaca', 'Atlante', 'Cancún FC', 'Cimarrones de Sonora FC', 'Club Atlético Morelia', 'Club Celaya', 'Correcaminos', 'Dorados', 'Mineros de Zacatecas', 'Pumas Tabasco', 'Tapatío', 'Tepatitlán FC', 'Tlaxcala FC', 'Tampico M Fútbol Club', 'U DE G', 'Venados FC', 'Ninguno']
-        },
-        
-        'Total Afición':{
-            'skiprows' : 8, 
-            'usecols':'EC:FJ',
-            'columns': ['América', 'Atlas', 'Chivas(Guadalajara)', 'Cruz Azul', 'Pumas', 'Tigres', 'Rayados (Monterrey)', 'Santos', 'Toluca', 'León', 'Tijuana', 'Mazatlán FC', 'Puebla', 'Pachuca', 'Querétaro', 'Necaxa', 'FC Juárez', 'Atlético San Luis', 'Alebrijes de Oaxaca', 'Atlante', 'Cancún FC', 'Cimarrones de Sonora FC', 'Club Atlético Morelia', 'Club Celaya', 'Correcaminos', 'Dorados', 'Mineros de Zacatecas', 'Pumas Tabasco', 'Tapatío', 'Tepatitlán FC', 'Tlaxcala FC', 'Tampico M Fútbol Club', 'U DE G', 'Venados FC']
-        },      
-
-        'Nivel Afición':{
-            'skiprows' : 8, 
-            'usecols':'FK:FM',
-            'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
-        },      
-
-        'Nivel Afición - Nuevos':{
-            'skiprows' : 8, 
-            'usecols':'FN:FP',
-            'columns': ['HEAVY', 'MEDIUM', 'LIGHT']
-        },      
-
-        'Fan Base':{
-            'skiprows' : 8, 
-            'usecols':'FQ:FS',
-            'columns': ['FAN BASE 1', 'FAN BASE 2', 'FAN BASE 3'] 
-        },      
-        
-        'Liga':{
-            'skiprows' : 8, 
-            'usecols':'FT:FV',
-            'columns': ['LIGA MX', 'ASCENSO MX', 'LIGA MX + ASCENSO MX']
-        },      
-        
-        'Practica Futbol':{
-            'skiprows' : 8, 
-            'usecols':'FW:FZ',
-            'columns': ['NO PRACTICA', 'SÍ PRACTICA', 'SI, A VECES', 'SÍ, SIEMPRE / FRECUENTE']
-        },      
-        
-        'Presencia de niños':{
-            'skiprows' : 8, 
-            'usecols':'GA:GB',
-            'columns': ['SÍ', 'NO']
-        },      
-
-        'Fans en la ciudad':{
-            'skiprows' : 8, 
-            'usecols':'GC:GP',
-            'columns': ['AGUASCALIENTES', 'CIUDAD JUÁREZ', 'CDMX', 'GUADALAJARA', 'LEÓN', 'MONTERREY', 'MAZATLÁN', 'PACHUCA', 'PUEBLA', 'QUERÉTARO', 'SAN LUIS POTOSÍ', 'TIJUANA', 'TOLUCA', 'TORREÓN']
-        },      
-        
-        'Milenials Aficionados':{
-            'skiprows' : 8, 
-            'usecols':'GQ:HH',
-            'columns': ['AMÉRICA', 'ATLAS', 'CHIVAS', 'CRUZ AZUL', 'PUMAS', 'TIGRES', 'RAYADOS', 'SANTOS', 'TOLUCA', 'LEÓN', 'TIJUANA', 'MAZATLÁN', 'PUEBLA', 'PACHUCA', 'QUERÉTARO', 'FC JUÁREZ', 'ATLÉTICO SAN LUIS', 'NECAXA']
-        },      
-
-        'Productos Bancarios':{
-            'skiprows' : 8, 
-            'usecols':'HI:HK',
-            'columns': ['TARJETA DE DÉBITO', 'TARJETA DE CRÉDITO', 'BANCO EN LINEA']
-        },      
-        
-        
-        'BBVA Bancomer':{
-            'skiprows' : 8, 
-            'usecols':'HL:HM',
-            'columns': ['CLIENTES BBVA BANCOMER', 'OTROS BANCOS']
-        },      
-        
-        
-        'Apuestas Deportivas':{
-            'skiprows' : 8, 
-            'usecols':'HN:HO',
-            'columns': ['SÍ', 'NO']
-        },     
-        
-        'Caliente':{
-            'skiprows' : 8, 
-            'usecols':'HP:HQ',
-            'columns': ['CONOCE', 'USA']
-        },      
-        
-    }
-}
-
-
-sheet_dict = xls_dict[2020]
+sheet_dict = dict_2020
 df_year = pd.DataFrame()
 for sheet  in tqdm(sheet_names):
     if sheet not in ['Contents', 'MUESTRA', 'Q1B', 'Q2BEDAD']:
         df_answ = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['answers']['skiprows'], usecols = sheet_dict['answers']['usecols'])
         question = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict['question']['skiprows'], usecols = sheet_dict['question']['usecols']).columns[0]
-
+        print(f'Starting year = {2020} \nquestion {question} ')
         #Rename the column
         df_answ.columns = [question]
         #We just want to include the answer to the question not the statistical values
         for cutword  in sheet_dict['answers']['cutwords']:
-            df_cut = df_answ[ df_answ[question].replace(np.nan, '').str.startswith(cutword) ]
+            df_cut = df_answ[ df_answ[question].replace(np.nan, '').str.startswith(cutword).replace(np.nan, False) ]
             if len(df_cut)>0:
                 cutindex = df_cut.index[0]
                 break
@@ -175,29 +52,41 @@ for sheet  in tqdm(sheet_names):
         valuesindex = df_answ.index
 
         df_question = pd.DataFrame()
-        for demograpphic in tqdm(sheet_dict.keys()):
-            if demograpphic in ['question', 'answers', 'questions_list']:
+        print(f'\n\n--------------------\nStarting year = {2020} \nquestion {question} \n df_question.shape: {df_question.shape}')
+
+        for demographic in tqdm(sheet_dict.keys()):
+            if demographic in ['question', 'answers', 'questions_list']:
                 continue
             else:
-                df = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict[demograpphic]['skiprows'], usecols = sheet_dict[demograpphic]['usecols'])
+                df = pd.read_excel(xls, sheet_name=sheet, skiprows = sheet_dict[demographic]['skiprows'], usecols = sheet_dict[demographic]['usecols'])
                 df = df.loc[valuesindex]
-                df.columns = sheet_dict[demograpphic]['columns']
+                df.columns = sheet_dict[demographic]['columns']
                 df = df_answ.join(df)
-                df[question] = df[question].apply(lambda x: question  + ' - ' + x)
-                df['pregunta'] =  question
-                df = df.set_index(question)
-                df = df.transpose()
-                df = df.reset_index()
-                df = df.rename(columns ={'index':'demographic_values'})
-                df['demographic'] = demograpphic
+                #df[question] = df[question].apply(lambda x: str(question)  + ' - ' + str(x))
+                df['question'] =  question
+                #df = df.set_index(question)
+                #df 
+                #df_t = df.transpose()
+                #df_t = df_t.reset_index()
+                df = df.rename(columns ={question:'answer_group'})
+                df['demographic'] = demographic
+                df = df.melt(id_vars =['demographic', 'question', 'answer_group'])
+                df = df.rename(columns ={'variable':'demographic_group'})
                 
-                if len(df_question) == 0:
-                    df_question = df
+                #Testying atypical or new values in demographic variables
+                atypical_demogrpahic_values = [x for x in df.demographic_group.unique() if x not in unique_demographic_groups]
+                if len(atypical_demogrpahic_values) >0:
+                    raise ValueError()
                 else:
-                    df_question = df_question.append(df)
+                    #Non empty df_qestion
+                    if len(df_question) == 0:
+                        df_question = df
+                    else:
+                        df_question = df_question.append(df)
+                        #print(f'\tdf_question.shape: {df_question.shape}')
                 
         if len(df_year) == 0:
             df_year = df_question
         else:
-            df_year = df_year.merge(df_question, on=['demographic', 'demographic_values'])
+            df_year = df_year.append(df_question)
             

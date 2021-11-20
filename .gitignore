@@ -6,6 +6,7 @@
 *egg-info*
 data/*
 .fuse*
+*.csv
 
 # VS code and pycharm
 .vscode/
